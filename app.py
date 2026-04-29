@@ -1,10 +1,13 @@
-import streamlit as st
 from PyPDF2 import PdfReader
+import streamlit as st
+import os
+
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
-from langchain.schema.runnable import RunnablePassthrough
-from langchain.prompts import PromptTemplate
+
+from langchain_core.runnables import RunnablePassthrough
+from langchain_core.prompts import PromptTemplate
 
 # ---------------- UI ----------------
 st.set_page_config(page_title="Legal AI Assistant")
